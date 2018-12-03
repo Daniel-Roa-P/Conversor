@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Conversiones</string>
+    <string name="texto_1">Ingrese un numero natural</string>
+    <string name="texto_2">CONVERTIR</string>
+    <string name="texto_3">Binario</string>
+    <string name="texto_4">Octal</string>
+    <string name="texto_5">Hexadecimal</string>
+</resources>
