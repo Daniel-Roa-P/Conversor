@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.example.danbr.conversiones.Conversor.Binario;
 import com.example.danbr.conversiones.Conversor.Hexadecimal;
@@ -19,7 +20,11 @@ public class MainActivity extends AppCompatActivity {
     private EditText cuadro1,cuadro2;
     private Button boton;
     private RadioButton b1,b2,b3;
-    private Hexadecimal num=new Hexadecimal();
+    private SistemaNumerico num;
+
+    public void liskov(SistemaNumerico n){
+        num=n;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,20 +38,32 @@ public class MainActivity extends AppCompatActivity {
         b2 = (RadioButton)findViewById(R.id.radioButton2);
         b3 = (RadioButton)findViewById(R.id.radioButton3);
 
-        if(b1.isChecked() == true){
 
-            Binario bin = new Binario();
-
-        }
 
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                numero=Integer.parseInt(cuadro1.getText().toString());
-                System.out.println(numero);
-                num.convertir(numero);
-                cuadro2.setText(num.getValor());
+                if (b1.isChecked() == true) {
+                    liskov(new Binario());
+                } else if (b2.isChecked() == true) {
+                    liskov(new Octal());
+                } else if (b3.isChecked() == true) {
+                    liskov(new Hexadecimal());
+                }
+
+                if (cuadro1.length() != 0 && (b1.isChecked()==true ||b2.isChecked()==true || b3.isChecked()==true )) {
+
+                    numero = Integer.parseInt(cuadro1.getText().toString());
+                    System.out.println(numero);
+                    num.convertir(numero);
+                    cuadro2.setText(num.getValor());
+                } else {
+
+                    Toast.makeText(MainActivity.this,
+                            "Por favor ingrese bien los datos", Toast.LENGTH_LONG).show();
+
+                }
             }
         });
 
