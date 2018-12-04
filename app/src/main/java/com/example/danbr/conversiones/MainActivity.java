@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 import com.example.danbr.conversiones.Conversor.Binario;
+import com.example.danbr.conversiones.Conversor.Hexadecimal;
+import com.example.danbr.conversiones.Conversor.Octal;
 import com.example.danbr.conversiones.Conversor.SistemaNumerico;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText cuadro1,cuadro2;
     private Button boton;
     private RadioButton b1,b2,b3;
-    private Binario num=new Binario();
+    private Hexadecimal num=new Hexadecimal();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         if(b1.isChecked() == true){
 
             Binario bin = new Binario();
-            num = bin;
 
         }
 

@@ -19,24 +19,16 @@ public class Binario extends SistemaNumerico {
             }
         }
 
-        cadenaNumeros=new int [tamaño];
+        cadenaNumeros=new String [tamaño];
 
         for(int i=tamaño-1;i>-1;i--){
 
-            if(numero%2==0){
-
-                cadenaNumeros[i]=0;
-
-            } else if(numero%2==1){
-
-                cadenaNumeros[i]=1;
-
-            }
+            cadenaNumeros[i]=String.valueOf(numero%2);
 
             numero=numero/2;
 
         }
 
-    };
+    }
 
 }

@@ -7,7 +7,7 @@ public class SistemaNumerico {
 
     protected int tamaño;
     protected String valor;
-    protected int[] cadenaNumeros;
+    protected String[] cadenaNumeros;
 
     public void convertir(int numero){};
 
